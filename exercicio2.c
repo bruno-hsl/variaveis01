@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 
  main() {
@@ -9,7 +10,7 @@
     scanf("%d", &n1);
     fflush(stdin);
 
-    printf("Digite um operador('+' '-' '/' '*'):  ");
+    printf("Digite um operador('+' '-' '/' '*' '^' 'resto'):  ");
     fgets(operador, sizeof(operador), stdin);
     fflush(stdin);
 
@@ -21,6 +22,7 @@
     int subtracao = n1 - n2;
     int divisao = n1 / n2;
     int multiplicacao = n1 * n2;
+    int pot = pow(n1,n2);
 
     if (strcmp(operador, "+") == 0) {
         printf("%d", adicao);
@@ -33,6 +35,9 @@
     }
     else if(strcmp(operador, "*") == 0){
         printf("%d", multiplicacao);
+    }
+    else if(strcmp(operador, "^") == 0){
+        printf("%d", pot);
     }
     else{
         printf("operador invalido");
